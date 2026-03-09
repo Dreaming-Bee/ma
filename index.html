@@ -54,25 +54,38 @@
             background-position: center;
         }
 
-        @keyframes float {
+        @keyframes rain {
             0% {
-                transform: translateY(0px) rotate(0deg);
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
                 opacity: 1;
             }
 
             100% {
-                transform: translateY(-100vh) rotate(20deg);
+                transform: translateY(110vh) rotate(360deg);
                 opacity: 0;
             }
         }
 
-        .balloon,
-        .heart-particle {
+        .surprise-element {
             position: fixed;
-            bottom: -50px;
+            top: -100px;
             pointer-events: none;
-            z-index: 100;
-            animation: float 4s linear forward;
+            z-index: 1000;
+            animation: rain 5s linear forwards;
+        }
+
+        .crape {
+            width: 10px;
+            height: 30px;
+            border-radius: 2px;
         }
     </style>
 </head>
@@ -99,10 +112,10 @@
                         <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
                             href="#messages">Messages</a>
                     </div>
-                    <button onclick="sendLove()"
+                    <!-- <button onclick="sendLove()"
                         class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-xl h-10 px-5 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform active:scale-95">
                         <span class="truncate">Send Love</span>
-                    </button>
+                    </button> -->
                 </div>
                 <div class="md:hidden">
                     <span class="material-symbols-outlined text-slate-900 dark:text-white">menu</span>
@@ -183,16 +196,16 @@
                     </div>
                 </section>
                 <!-- Emotional Imagery Gallery -->
-                <section id="gallery"
+                <!-- <section id="gallery"
                     class="px-6 md:px-20 py-12 bg-slate-50 dark:bg-slate-900/30 rounded-3xl mx-4 md:mx-20">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl md:text-4xl font-display font-black text-slate-900 dark:text-white mb-4">
                             Gallery of Love</h2>
                         <p class="text-slate-500 dark:text-slate-400">Capturing the beauty of your presence</p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> -->
                         <!-- Image 1 -->
-                        <div
+                        <!-- <div
                             class="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:scale-[1.02]">
                             <div class="absolute inset-0 bg-cover bg-center"
                                 style="background-image: url('file:///C:/Users/iTEC/.gemini/antigravity/brain/9be0172a-1d4b-40a4-b472-c22379541bed/mother_child_silhouette_love_1773081153222.png');">
@@ -202,9 +215,9 @@
                                 class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
                                 <p class="font-bold text-lg">Pure Connection</p>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Image 2 -->
-                        <div
+                        <!-- <div
                             class="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:scale-[1.02]">
                             <div class="absolute inset-0 bg-cover bg-center"
                                 style="background-image: url('file:///C:/Users/iTEC/.gemini/antigravity/brain/9be0172a-1d4b-40a4-b472-c22379541bed/polaroid_photos_on_string_1773081169557.png');">
@@ -214,9 +227,9 @@
                                 class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
                                 <p class="font-bold text-lg">Eternal Memories</p>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Image 3 -->
-                        <div
+                        <!-- <div
                             class="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:scale-[1.02]">
                             <div class="absolute inset-0 bg-cover bg-center"
                                 style="background-image: url('file:///C:/Users/iTEC/.gemini/antigravity/brain/9be0172a-1d4b-40a4-b472-c22379541bed/birthday_cake_amma_table_1773081186162.png');">
@@ -226,9 +239,9 @@
                                 class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
                                 <p class="font-bold text-lg">Sweet Celebration</p>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Image 4 -->
-                        <div
+                        <!-- <div
                             class="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:scale-[1.02]">
                             <div class="absolute inset-0 bg-cover bg-center"
                                 style="background-image: url('file:///C:/Users/iTEC/.gemini/antigravity/brain/9be0172a-1d4b-40a4-b472-c22379541bed/heart_shaped_sunset_clouds_1773081288327.png');">
@@ -240,7 +253,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <!-- Footer Section -->
                 <footer class="mt-auto px-6 md:px-20 py-12 border-t border-primary/10 text-center">
                     <div class="flex flex-col items-center gap-4">
@@ -284,18 +297,39 @@
         }
 
         function triggerSurprise() {
-            const colors = ['#ee2b6c', '#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3'];
-            for (let i = 0; i < 50; i++) {
+            const colors = ['#ee2b6c', '#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#00d2d3', '#54a0ff'];
+
+            for (let i = 0; i < 80; i++) {
                 setTimeout(() => {
                     const element = document.createElement('div');
-                    const isHeart = Math.random() > 0.5;
-                    element.className = isHeart ? 'heart-particle' : 'balloon';
-                    element.innerHTML = `<span class="material-symbols-outlined" style="color: ${colors[Math.floor(Math.random() * colors.length)]}; font-size: ${Math.random() * 20 + 20}px">${isHeart ? 'favorite' : 'farsight_2'}</span>`;
+                    const random = Math.random();
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+
+                    element.className = 'surprise-element';
+
+                    if (random < 0.3) {
+                        // Heart
+                        element.innerHTML = `<span class="material-symbols-outlined" style="color: ${color}; font-size: ${Math.random() * 20 + 20}px">favorite</span>`;
+                    } else if (random < 0.6) {
+                        // Balloon
+                        element.innerHTML = `<span class="material-symbols-outlined" style="color: ${color}; font-size: ${Math.random() * 30 + 30}px; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1))">radio_button_unchecked</span>`;
+                        element.style.borderRadius = "50%";
+                        element.style.backgroundColor = color + "44";
+                    } else {
+                        // Crape
+                        element.classList.add('crape');
+                        element.style.backgroundColor = color;
+                        element.style.width = (Math.random() * 10 + 5) + 'px';
+                        element.style.height = (Math.random() * 30 + 10) + 'px';
+                        element.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    }
+
                     element.style.left = Math.random() * 100 + 'vw';
-                    element.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    element.style.animationDuration = (Math.random() * 2 + 3) + 's';
                     document.body.appendChild(element);
-                    setTimeout(() => element.remove(), 4000);
-                }, i * 100);
+
+                    setTimeout(() => element.remove(), 5000);
+                }, i * 50);
             }
         }
     </script>
