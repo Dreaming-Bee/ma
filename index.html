@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Happy Birthday Amma</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Happy Birthday Amma</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -32,158 +39,266 @@
             },
         }
     </script>
-<style>
+    <style>
         body {
             font-family: 'Noto Sans', sans-serif;
         }
+
         .font-display {
             font-family: 'Noto Serif', serif;
         }
+
         .hero-gradient {
             background: linear-gradient(rgba(34, 16, 22, 0.4), rgba(238, 43, 108, 0.2)), url('https://images.unsplash.com/photo-1525062894411-9657662c2f6d?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(20deg);
+                opacity: 0;
+            }
+        }
+
+        .balloon,
+        .heart-particle {
+            position: fixed;
+            bottom: -50px;
+            pointer-events: none;
+            z-index: 100;
+            animation: float 4s linear forward;
+        }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans selection:bg-primary/30">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<!-- Top Navigation Bar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 md:px-20 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
-<div class="flex items-center gap-3 text-primary">
-<span class="material-symbols-outlined text-3xl">favorite</span>
-<h2 class="text-slate-900 dark:text-white text-lg font-display font-bold leading-tight tracking-tight">Birthday Wishes</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-end gap-8">
-<div class="flex items-center gap-9">
-<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
-<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Gallery</a>
-<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Messages</a>
-</div>
-<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-xl h-10 px-5 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform active:scale-95">
-<span class="truncate">Send Love</span>
-</button>
-</div>
-<div class="md:hidden">
-<span class="material-symbols-outlined text-slate-900 dark:text-white">menu</span>
-</div>
-</header>
-<main class="flex flex-1 flex-col">
-<!-- Hero Section -->
-<section class="px-4 md:px-20 py-8">
-<div class="relative min-h-[500px] md:min-h-[600px] flex flex-col items-center justify-center rounded-xl overflow-hidden shadow-2xl hero-gradient" data-alt="Warm atmospheric background with soft bokeh lights and pink tones">
-<div class="absolute inset-0 bg-black/20"></div>
-<div class="relative z-10 flex flex-col gap-6 text-center max-w-3xl px-6">
-<div class="flex justify-center gap-2 mb-2">
-<span class="material-symbols-outlined text-primary text-4xl animate-bounce">favorite</span>
-<span class="material-symbols-outlined text-white text-2xl opacity-80">auto_awesome</span>
-<span class="material-symbols-outlined text-primary text-4xl animate-bounce" style="animation-delay: 0.2s">favorite</span>
-</div>
-<h1 class="text-white text-5xl md:text-7xl font-display font-black leading-tight tracking-tight drop-shadow-lg">
-                                Happy Birthday, Amma! 🎉❤️
-                            </h1>
-<p class="text-white text-lg md:text-xl font-medium opacity-90 drop-shadow-md">
-                                Celebrating the most wonderful Amma in the world.
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans selection:bg-primary/30">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Top Navigation Bar -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 md:px-20 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+                <div class="flex items-center gap-3 text-primary">
+                    <span class="material-symbols-outlined text-3xl">favorite</span>
+                    <h2
+                        class="text-slate-900 dark:text-white text-lg font-display font-bold leading-tight tracking-tight">
+                        Birthday Wishes</h2>
+                </div>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                            href="#">Home</a>
+                        <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                            href="#gallery">Gallery</a>
+                        <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                            href="#messages">Messages</a>
+                    </div>
+                    <button onclick="sendLove()"
+                        class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-xl h-10 px-5 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform active:scale-95">
+                        <span class="truncate">Send Love</span>
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <span class="material-symbols-outlined text-slate-900 dark:text-white">menu</span>
+                </div>
+            </header>
+            <main class="flex flex-1 flex-col">
+                <!-- Hero Section -->
+                <section class="px-4 md:px-20 py-8">
+                    <div class="relative min-h-[500px] md:min-h-[600px] flex flex-col items-center justify-center rounded-xl overflow-hidden shadow-2xl hero-gradient"
+                        data-alt="Warm atmospheric background with soft bokeh lights and pink tones">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 flex flex-col gap-6 text-center max-w-3xl px-6">
+                            <div class="flex justify-center gap-4 mb-2">
+                                <span
+                                    class="material-symbols-outlined text-primary text-5xl animate-bounce">favorite</span>
+                                <span class="material-symbols-outlined text-white text-3xl opacity-80 animate-spin"
+                                    style="animation-duration: 3s">auto_awesome</span>
+                                <span class="material-symbols-outlined text-primary text-5xl animate-bounce"
+                                    style="animation-delay: 0.2s">favorite</span>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -top-10 -left-10 text-primary/40 animate-pulse hidden md:block">
+                                    <span class="material-symbols-outlined text-6xl">celebration</span>
+                                </div>
+                                <h1
+                                    class="text-white text-5xl md:text-8xl font-display font-black leading-tight tracking-tight drop-shadow-lg scale-110">
+                                    Happy Birthday, Amma! 🎉❤️
+                                </h1>
+                                <div
+                                    class="absolute -bottom-10 -right-10 text-primary/40 animate-pulse hidden md:block">
+                                    <span class="material-symbols-outlined text-6xl rotate-12">redeem</span>
+                                </div>
+                            </div>
+                            <p class="text-white text-xl md:text-2xl font-medium opacity-95 drop-shadow-md mt-4">
+                                Celebrating the most wonderful mother in the world.
                             </p>
-<div class="mt-4">
-<button class="flex mx-auto min-w-[200px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-primary text-lg font-bold shadow-xl hover:bg-primary hover:text-white transition-all duration-300 group">
-<span class="truncate mr-2">See Your Surprise</span>
-<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Heartfelt Message Section -->
-<section class="max-w-4xl mx-auto px-6 py-16 text-center">
-<div class="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6 text-primary">
-<span class="material-symbols-outlined text-3xl">volunteer_activism</span>
-</div>
-<h2 class="text-slate-900 dark:text-white text-4xl md:text-5xl font-display font-black leading-tight tracking-tight mb-8">
+                            <div class="mt-8">
+                                <button onclick="triggerSurprise()"
+                                    class="flex mx-auto min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-16 px-10 bg-white text-primary text-xl font-bold shadow-2xl hover:bg-primary hover:text-white transition-all duration-300 group scale-105">
+                                    <span class="truncate mr-3">See Your Surprise</span>
+                                    <span
+                                        class="material-symbols-outlined group-hover:rotate-45 transition-transform text-2xl">auto_awesome</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Heartfelt Message Section -->
+                <section id="messages" class="max-w-4xl mx-auto px-6 py-16 text-center">
+                    <div
+                        class="inline-flex items-center justify-center p-4 bg-primary/10 rounded-full mb-8 text-primary">
+                        <span class="material-symbols-outlined text-4xl">volunteer_activism</span>
+                    </div>
+                    <h2
+                        class="text-slate-900 dark:text-white text-4xl md:text-5xl font-display font-black leading-tight tracking-tight mb-8">
                         To My Dearest Amma
                     </h2>
-<div class="relative">
-<span class="material-symbols-outlined absolute -top-10 -left-6 text-primary/20 text-6xl rotate-180">format_quote</span>
-<p class="text-slate-700 dark:text-slate-300 text-lg md:text-2xl font-medium leading-relaxed italic px-4 md:px-12">
-                            Happy Birthday to the greatest Amma in the whole world! Amma, I wish you a long life filled with happiness, good health, and endless peace. You are the most loving,
-                            caring, and strongest person I know. Thank you for all the sacrifices you made and for always being there for me no matter what. Your love, kindness, and guidance
-                            mean everything in my life. I’m truly blessed to have you as my Amma. May your days be filled with smiles, laughter, and all the love you have given to others coming
-                            back to you a thousand times. Happy Birthday, Amma. I love you so much. 💖
-                        </p>
-<span class="material-symbols-outlined absolute -bottom-10 -right-6 text-primary/20 text-6xl">format_quote</span>
-</div>
-</section>
-<!-- Emotional Imagery Gallery -->
-<section class="px-6 md:px-20 py-12">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Flowers -->
-<div class="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-primary/20 transition-all">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A beautiful bouquet of pink and white peonies and roses" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwaW0B1az6gSBQD7UwM75UpZxOfgEfmedKeTjxE4wDquuG-nFCoLNXnBVDjtjEld_TCIXpDEWUnLwLcvL-WatiKg2XvX0uKwGVmlLsPrxOVWPmPL_Mse1nM8uya7l1UMVL_QzDtEIjIKtdkm9xk3Pr0CUsa3boCTtw5wolC3AXOY8l2ITazh11Cvn5GmMBrVkxfuTwXQV72Tgoy-czNWx8xIOnLukPouwJsWK5e7Lo2baThTcaCmcgpSQJPm1AC90-0-sNH_bxHus');"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-6 left-6 text-white">
-<div class="flex items-center gap-2 mb-1">
-<span class="material-symbols-outlined text-primary text-xl">filter_vintage</span>
-<span class="text-sm font-semibold uppercase tracking-wider">Nature's Beauty</span>
-</div>
-<h3 class="text-xl font-display font-bold">Beautiful Flowers</h3>
-</div>
-</div>
-<!-- Heart Decorations -->
-<div class="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-primary/20 transition-all">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Heart shaped glowing fairy lights on a warm background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsKjOStRYguoTL5wv6w1EBjjleY6vtLW6EyibnNCbq9Bc0dZweD1PG_tn4tuwx9NCBCkCmtbGYQBY0peNgo8V9ISYZ31NlDDd4cKeRBWCeyXUpCcLkbK_kFqQM6iiDTRkJ2azHltiGORoF3WLSmGRo5kEBUX-HncJ3JuFM-veP31vAjgjy3aROzdleYxmywKX_cgo9czdgWdwFha2dBoC6MFyL-R6u-_f0DKDnNoxBKB1yNjrBzLz8huByVkRyb8V_K5jDq0S9UZk');"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-6 left-6 text-white">
-<div class="flex items-center gap-2 mb-1">
-<span class="material-symbols-outlined text-primary text-xl">favorite</span>
-<span class="text-sm font-semibold uppercase tracking-wider">Infinite Love</span>
-</div>
-<h3 class="text-xl font-display font-bold">Warm Decorations</h3>
-</div>
-</div>
-<!-- Birthday Cake -->
-<div class="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-primary/20 transition-all">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A glowing birthday cake with lit candles and pink frosting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvfnIVObOlk0qjzSU2KiYqnhfSDNCB1e_3_8mnafxAjQeZOKPt_ssn4_DVT6_t0r9cLEyvFKe8IWipD-HVzqgxkmHCcHY1VwDbMc3yVkNTHArwSEoUBjv4NNII5YaSsQbFM17d22CX-YK9mMlTLdce_UPmA3l97PJXyQ9nUFGX2bDUd4Kc00whOtxePQjRcYwlFa-ub-7bnK5CdQ0uEEQ6SkTRN8bCBbMG3xwQEwYEKQUtITdpywM4_8sr6duM-kiYeE8rDEdzIs4');"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-6 left-6 text-white">
-<div class="flex items-center gap-2 mb-1">
-<span class="material-symbols-outlined text-primary text-xl">cake</span>
-<span class="text-sm font-semibold uppercase tracking-wider">Sweet Moments</span>
-</div>
-<h3 class="text-xl font-display font-bold">Glowing Cake</h3>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer Section -->
-<footer class="mt-auto px-6 md:px-20 py-12 border-t border-primary/10 text-center">
-<div class="flex flex-col items-center gap-4">
-<div class="text-primary flex gap-4 mb-4">
-<span class="material-symbols-outlined text-2xl hover:scale-125 transition-transform cursor-pointer">favorite</span>
-<span class="material-symbols-outlined text-2xl hover:scale-125 transition-transform cursor-pointer">share</span>
-<span class="material-symbols-outlined text-2xl hover:scale-125 transition-transform cursor-pointer">sentiment_very_satisfied</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute -top-10 -left-6 text-primary/20 text-7xl rotate-180">format_quote</span>
+                        <div class="space-y-8">
+                            <p
+                                class="text-slate-700 dark:text-slate-300 text-lg md:text-2xl font-medium leading-relaxed italic px-4 md:px-12">
+                                Happy Birthday to the greatest Amma in the whole world! Amma, I wish you a long life
+                                filled with happiness, good health, and endless peace. You are the most loving,
+                                caring, and strongest person I know. Thank you for all the sacrifices you made and for
+                                always being there for me no matter what.
+                            </p>
+                            <p
+                                class="text-slate-700 dark:text-slate-300 text-lg md:text-2xl font-medium leading-relaxed italic px-4 md:px-12 border-t border-primary/10 pt-8">
+                                Amma, your heart is a garden of love where the most beautiful memories bloom. On your
+                                special day, I want you to know that you are my hero, my best friend, and my greatest
+                                blessing. May your year be as bright and beautiful as your soul.
+                            </p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined absolute -bottom-10 -right-6 text-primary/20 text-7xl">format_quote</span>
+                    </div>
+                </section>
+                <!-- Emotional Imagery Gallery -->
+                <section id="gallery"
+                    class="px-6 md:px-20 py-12 bg-slate-50 dark:bg-slate-900/30 rounded-3xl mx-4 md:mx-20">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-display font-black text-slate-900 dark:text-white mb-4">
+                            Gallery of Love</h2>
+                        <p class="text-slate-500 dark:text-slate-400">Capturing the beauty of your presence</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Image 1 -->
+                        <div
+                            class="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-cover bg-center"
+                                style="background-image: url('file:///C:/Users/iTEC/.gemini/antigravity/brain/9be0172a-1d4b-40a4-b472-c22379541bed/mother_child_silhouette_love_1773081153222.png');">
+                            </div>
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                            <div
+                                class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="font-bold text-lg">Pure Connection</p>
+                            </div>
+                        </div>
+                        <!-- Image 2 -->
+                        <div
+                            class="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-cover bg-center"
+                                style="background-image: url('file:///C:/Users/iTEC/.gemini/antigravity/brain/9be0172a-1d4b-40a4-b472-c22379541bed/polaroid_photos_on_string_1773081169557.png');">
+                            </div>
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                            <div
+                                class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="font-bold text-lg">Eternal Memories</p>
+                            </div>
+                        </div>
+                        <!-- Image 3 -->
+                        <div
+                            class="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-cover bg-center"
+                                style="background-image: url('file:///C:/Users/iTEC/.gemini/antigravity/brain/9be0172a-1d4b-40a4-b472-c22379541bed/birthday_cake_amma_table_1773081186162.png');">
+                            </div>
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                            <div
+                                class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="font-bold text-lg">Sweet Celebration</p>
+                            </div>
+                        </div>
+                        <!-- Image 4 -->
+                        <div
+                            class="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-cover bg-center"
+                                style="background-image: url('file:///C:/Users/iTEC/.gemini/antigravity/brain/9be0172a-1d4b-40a4-b472-c22379541bed/heart_shaped_sunset_clouds_1773081288327.png');">
+                            </div>
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                            <div
+                                class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="font-bold text-lg">Dreamy Love</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Footer Section -->
+                <footer class="mt-auto px-6 md:px-20 py-12 border-t border-primary/10 text-center">
+                    <div class="flex flex-col items-center gap-4">
+                        <div class="text-primary flex gap-6 mb-4">
+                            <span
+                                class="material-symbols-outlined text-3xl hover:scale-125 transition-transform cursor-pointer">favorite</span>
+                            <span
+                                class="material-symbols-outlined text-3xl hover:scale-125 transition-transform cursor-pointer">celebration</span>
+                            <span
+                                class="material-symbols-outlined text-3xl hover:scale-125 transition-transform cursor-pointer">sentiment_very_satisfied</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">
                             Created with love for the world's best Amma.
                         </p>
-<p class="text-primary text-xs font-bold tracking-[0.2em] uppercase mt-2">
-                            Forever yours ❤️
+                        <p class="text-primary text-xs font-bold tracking-[0.3em] uppercase mt-2">
+                            Happy Birthday Amma ❤️
                         </p>
-</div>
-</footer>
-</main>
-</div>
-</div>
-<!-- Floating Heart Decorations (CSS only) -->
-<div class="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none">
-<div class="absolute top-[10%] left-[5%] opacity-20 text-primary animate-pulse">
-<span class="material-symbols-outlined text-6xl">favorite</span>
-</div>
-<div class="absolute top-[40%] right-[5%] opacity-10 text-primary animate-pulse" style="animation-delay: 1s">
-<span class="material-symbols-outlined text-8xl">favorite</span>
-</div>
-<div class="absolute bottom-[20%] left-[10%] opacity-15 text-primary animate-pulse" style="animation-delay: 2s">
-<span class="material-symbols-outlined text-7xl">favorite</span>
-</div>
-</div>
-</body></html>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+    <!-- Floating Heart Decorations -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none">
+        <div class="absolute top-[10%] left-[5%] opacity-20 text-primary animate-pulse">
+            <span class="material-symbols-outlined text-6xl">favorite</span>
+        </div>
+        <div class="absolute top-[40%] right-[5%] opacity-10 text-primary animate-pulse" style="animation-delay: 1s">
+            <span class="material-symbols-outlined text-8xl">favorite</span>
+        </div>
+        <div class="absolute bottom-[20%] left-[10%] opacity-15 text-primary animate-pulse" style="animation-delay: 2s">
+            <span class="material-symbols-outlined text-7xl">favorite</span>
+        </div>
+    </div>
+    <script>
+        function sendLove() {
+            const hearts = "❤️".repeat(55);
+            const phoneNumber = "+94775199264";
+            const message = encodeURIComponent("Sending you 55 hearts, Amma! " + hearts);
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+
+        function triggerSurprise() {
+            const colors = ['#ee2b6c', '#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const element = document.createElement('div');
+                    const isHeart = Math.random() > 0.5;
+                    element.className = isHeart ? 'heart-particle' : 'balloon';
+                    element.innerHTML = `<span class="material-symbols-outlined" style="color: ${colors[Math.floor(Math.random() * colors.length)]}; font-size: ${Math.random() * 20 + 20}px">${isHeart ? 'favorite' : 'farsight_2'}</span>`;
+                    element.style.left = Math.random() * 100 + 'vw';
+                    element.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(element);
+                    setTimeout(() => element.remove(), 4000);
+                }, i * 100);
+            }
+        }
+    </script>
+</body>
+
+</html>
